@@ -1,0 +1,66 @@
+\section{Comparación y Conclusiones}
+A partir del diseño y la implementación del circuito, se logró realizar un acoplador cercano a las especificaciones requeridas.
+
+La siguiente tabla refleja los resultados esperados, contra los obtenidos en simulación e implementación.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Parámetro} & \textbf{Simulación} & \textbf{Medición} & \textbf{Diferencia (\%)} \\
+        \hline
+        Frecuencia de resonancia ($f_0$) [MHz] & 17.82 & 18.18 & 2.02\% \\
+        \hline
+        Impedancia de entrada ($Z_{in}$) [$\Omega$] & 54.16 & 40.66 & 24.88\% \\
+        \hline
+        Impedancia de salida ($Z_{out}$) [$\Omega$] & 1020 & 770 & 24.51\% \\
+        \hline
+        Ancho de banda (BW) [MHz] & 1.65 & 1.32 & 20\% \\
+        \hline
+    \end{tabular}
+    \caption{Comparación entre valores simulados y medidos}
+    \label{tab:sim_vs_med}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Parámetro} & \textbf{Medición} & \textbf{Requisito de Diseño} & \textbf{Error con Medición (\%)} \\
+        \hline
+        Frecuencia de resonancia ($f_0$) [MHz] & 18.18 & 18.00 & 1.00\% \\
+        \hline
+        Impedancia de entrada ($Z_{in}$) [$\Omega$] & 40.66 & 50.00 & 18.68\% \\
+        \hline
+        Impedancia de salida ($Z_{out}$) [$\Omega$] & 770 & 1000 & 23\% \\
+        \hline
+        Ancho de banda (BW) [MHz] & 1.32 & 1.50 & 12.00\% \\
+        \hline
+    \end{tabular}
+    \caption{Comparación entre valores medidos y requisitos de diseño}
+    \label{tab:med_vs_req}
+\end{table}
+
+Existen discrepancias del orden del 20\% aproximadamente, sobretodo en las mediciones de las impedancias y el ancho de banda.
+
+Puesto que estas variables estan estrictamente relacionadas con $R_T$. Es seguro afirmar que estas diferencias se producen a partir de la discrepancia entre el $R_P$ calculado y medido.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Parámetro} & \textbf{Valor Calculado} & \textbf{Valor Medido} & \textbf{Error (\%)} \\
+        \hline
+        Resistencia de pérdida ($R_P$) [$\Omega$] & 26000 & 22000 & 15.38\% \\
+        \hline
+    \end{tabular}
+    \caption{Comparación entre $R_P$ calculado y medido}
+    \label{tab:rp_comparacion}
+\end{table}
+
+Además se debe tener en cuenta que
+\begin{itemize}
+    \item Existe una simplificación en la fórmula de cálculo de $C_1$, $C_2$, $C_3$ y $C_4$, donde despreciamos un término de 2do orden. Esta simplificación no es válida para frecuencias pequeñas, ya que el término simplificado no es despreciable respecto a la unidad.
+    \item Existen altas tolerancias en los capacitores cerámicos utilizados, del orden del -20\% al +80\%.
+    \item La fabricación artesanal de la bobina no asegura una resistencia de pérdida en paralelo alta.
+\end{itemize}
