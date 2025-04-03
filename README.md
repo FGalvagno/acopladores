@@ -1,7 +1,7 @@
 # Acopladores
 Este repositorio contiene archivos e información relevante a la realización del primer trabajo práctico de la materia Electrónica Analógica III en Ing. Electronica FCEFyN-UNC.
 
-![Circuito](/fig/circuito.png)
+![Circuito](/informe/fig/circuito.png)
 
 ## Diseño de Placa
 Los archivos coupler contienen el negativo utilizado para fabricar el PCB a modo prototipo con plancha.
